@@ -1,19 +1,20 @@
-CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, size TEXT, color TEXT, material TEXT, price INTEGER);
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, type TEXT, size TEXT, color TEXT, quantity INTEGER, price INTEGER);
 
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shirt", "small", "red","cotton", 25);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("pants", "large", "blue","linene", 30);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shorts", "medium", "yellow","cotton", 35);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shirt", "small", "orange","cotton", 28);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("pants", "large", "green","cotton", 30);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shorts", "medium", "pink","cotton", 29);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shirt", "small", "purple","cotton", 19);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("pants", "large", "red","cotton", 19);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shorts", "medium", "yellow","cotton", 38);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shirt", "small", "pink","cotton", 39);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("pants", "small", "green","cotton", 29);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shorts", "large", "purple","cotton", 27);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shirt", "medium", "orange","cotton", 16);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("pants", "small", "blue","cotton", 19);
-INSERT INTO inventory (name, size, color, material, price) VALUES ("shorts", "large", "black","cotton", 20);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shirt", "small", "red","6", 25);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("pants", "large", "blue","7", 30);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shorts", "medium", "yellow","4", 35);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shirt", "small", "orange","6", 28);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("pants", "large", "green","6", 30);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shorts", "medium", "pink","2", 29);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shirt", "small", "purple","8", 19);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("pants", "large", "red","8", 19);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shorts", "medium", "yellow","3", 38);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shirt", "small", "pink","9", 39);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("pants", "small", "green","9", 29);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shorts", "large", "purple","9", 27);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shirt", "medium", "orange","8", 16);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("pants", "small", "blue","2", 19);
+INSERT INTO inventory (type, size, color, quantity, price) VALUES ("shorts", "large", "black","7", 20);
 
-SELECT price, COUNT(*) FROM inventory GROUP BY price;
+SELECT * from inventory order by price;
+SELECT SUM(Quantity) FROM inventory ORDER BY price;
